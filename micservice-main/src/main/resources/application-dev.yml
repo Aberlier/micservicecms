@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: micservice-main-dev
+  security:
+    user:
+      name: admin
+      password: admin
+management:
+  server:
+    port: 9091  # 对外暴露API接口端口为9001
+    servlet:
+      context-path: /sys
+  security:
+    enabled: false # 这是为了在浏览器上展示效果 所以设置为false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+      health:
+        enabled: true
+        show-details: always
+      shutdown:
+        enabled: true
